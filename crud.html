@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="crud.css">
+</head>
+<body>
+    <div class="main">
+        <form id="frm">
+            <h3 id="hd">Crud Operation</h3>
+            <p><label>User Name</label><input type="text" required placeholder="Enter Name" id="i1"></p>
+            <p><label>User Age</label><input type="number" required placeholder="Enter Age" id="i2"></p>
+            <button type="submit" id="btn">Save</button>
+        </form>
+            <h3>Data table</h3>
+            <table border="2" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>NAME</th>
+                        <th>Age</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+                    <!-- data add -->
+                </tbody>
+            </table>
+
+    </div>
+</body>
+</html>
+<script src="crud.js" ></script>

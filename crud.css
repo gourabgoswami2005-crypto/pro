@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:ght@600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1D9E75;
+  --primary-dark: #0F6E56;
+  --primary-light: #E1F5EE;
+  --primary-mid: #9FE1CB;
+  --accent: #533AB7;
+  --danger: #D85A30;
+  --danger-light: #FAECE7;
+  --bg: #f4f6f5;
+  --surface: #ffffff;
+  --surface2: #f0f4f2;
+  --text: #1a1f1d;
+  --text-muted: #5a6862;
+  --border: #d4ddd9;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 16px rgba(15, 110, 86, 0.08);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.main {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── FORM CARD ── */
+form#frm {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#hd {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.3px;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+form#frm p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+form#frm label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+form#frm input[type="text"],
+form#frm input[type="number"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--text);
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form#frm input:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(29, 158, 117, 0.15);
+}
+
+form#frm input::placeholder {
+  color: #aab8b3;
+  font-weight: 400;
+}
+
+/* Chrome number input arrows removal */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+#btn {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding: 0.8rem;
+  font-family: var(--font-head);
+  font-size: 0.97rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s;
+}
+
+#btn:hover {
+  background: var(--primary-dark);
+}
+
+#btn:active {
+  transform: scale(0.98);
+}
+
+/* ── TABLE SECTION ── */
+.main > h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  padding-left: 0.25rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border) !important;
+  font-size: 0.88rem;
+}
+
+/* Override inline border="2" */
+table[border] {
+  border: 1px solid var(--border) !important;
+}
+
+thead {
+  background: var(--primary);
+}
+
+thead th {
+  padding: 0.75rem 0.6rem;
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none !important;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--primary-light);
+}
+
+tbody td {
+  padding: 0.7rem 0.6rem;
+  text-align: center;
+  color: var(--text);
+  border: none !important;
+  vertical-align: middle;
+}
+
+/* SL number badge */
+tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Name column */
+tbody td:nth-child(2) {
+  font-weight: 500;
+  text-align: left;
+  padding-left: 0.9rem;
+}
+
+/* ── ACTION BUTTONS (added via JS) ── */
+tbody button,
+td button {
+  padding: 0.38rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.12s;
+}
+
+tbody button:active,
+td button:active {
+  transform: scale(0.95);
+}
+
+/* Edit button */
+td:nth-child(4) button,
+tbody .edit-btn {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-mid);
+}
+
+td:nth-child(4) button:hover,
+tbody .edit-btn:hover {
+  background: var(--primary-mid);
+}
+
+/* Delete button */
+td:nth-child(5) button,
+tbody .delete-btn {
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #f0c4b3;
+}
+
+td:nth-child(5) button:hover,
+tbody .delete-btn:hover {
+  background: #f5c4b3;
+}
+
+/* ── EMPTY STATE ── */
+tbody:empty::after {
+  content: 'No records yet. Add one above.';
+  display: table-cell;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  /* Spans all 5 columns via JS — fallback display */
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 360px) {
+  body {
+    padding: 1rem 0.6rem 2rem;
+  }
+
+  form#frm {
+    padding: 1.25rem 1rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  thead th {
+    padding: 0.6rem 0.35rem;
+    font-size: 0.7rem;
+  }
+
+  tbody td {
+    padding: 0.55rem 0.35rem;
+  }
+
+  tbody button,
+  td button {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.72rem;
+  }
+}
