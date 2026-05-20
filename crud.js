@@ -4,10 +4,7 @@ let i2 = document.getElementById("i2").value
 let btn = document.getElementById("btn")
 let tbody = document.getElementById("tbody")
 //dataset
-let data = [
-    { name: "raj", age: 13 },
-    { name: "priya", age: 23 }
-]
+let data = []
 //(R)READ
 function readdata(){
     tbody.innerHTML="" //stop the duplication of data in table
